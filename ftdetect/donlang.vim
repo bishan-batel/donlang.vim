@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.goose setlocal filetype=goose
+autocmd BufNewFile,BufRead *.don setlocal filetype=donlang
