@@ -9,6 +9,11 @@ extern printf(str: string): i32
 
 def main(): i32 {
     printf("Bruh Moment\n")
+
+    let a = 420
+
+    let b = ptr a
+
     return 0
 }
 
