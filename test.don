@@ -1,19 +1,68 @@
 # main method (args parameter optional)
-
+import std
 
 extern cos(n: f64): f64
 
-extern putchar(str: char): i32
+extern putc(str: char): i32
 extern puts(str: string): i32
-extern printf(str: string): i32
 
-def main(): i32 {
-    printf("Bruh Moment\n")
+# "multiple" is for varargs, having a variable number of arguments of the last time,
+extern printf(str: string, multiple fargs: string): i32
 
-    let a = 420
 
-    let b = ptr a
+# one liner function, explicitly needs type parameters
+def get_funny_number(): f64 = 69.420
 
-    return 0
+#: 
+  Funny multiline comment
+:#
+
+# main function, could either return void or an i32 
+def main() {
+  printf("Bruh Moment\n")
+
+  # variable creation with let  
+  let x = 0
+
+  # switch statements
+  let num = get_funny_number()
+
+  match num {
+    # matches for 69
+    69 => {
+      printf("Number is 69\n")
+    }
+
+    420 => printf("hehe funny\n")
+
+    # Default branch
+    default => {
+      printf("number is not funny\n")
+    }
+  }
+
+  while true {
+  }
+
+  let a = sizeof 10
+  let msg = if num is 69 then "nice" else "not nice"
+  return 0
 }
 
+pub data Point(x: i32, y: i32)
+
+pub class Vector2f {
+  var x: f32
+  var y: f32
+
+  pub constructor(_x: f32, _y: f32) {
+    y = _y
+    self.y = _y # optional use of 'self'
+  }
+  
+  # Empty Constructor (one line while calling another constructor)
+  pub constructor() => constructor(0f, 0f)
+
+  operator +(x: f32) {
+  }
+}
