@@ -1,10 +1,10 @@
 # main method (args parameter optional)
-import std
+import std 
 
-extern cos(n: f64): f64
+unsafe extern cos(n: f64): f64
 
-extern putc(str: char): i32
-extern puts(str: string): i32
+unsafe extern putc(str: char): i32
+unsafe extern puts(str: string): i32
 
 # "multiple" is for varargs, having a variable number of arguments of the last time,
 extern printf(str: string, multiple fargs: string): i32
@@ -12,6 +12,10 @@ extern printf(str: string, multiple fargs: string): i32
 
 # one liner function, explicitly needs type parameters
 def get_funny_number(): f64 = 69.420
+
+def funny_delta(n: f64): f64 {
+  return n - 69
+}
 
 #: 
   Funny multiline comment
@@ -23,6 +27,7 @@ def main() {
 
   # variable creation with let  
   let x = 0
+
 
   # switch statements
   let num = get_funny_number()
@@ -44,8 +49,9 @@ def main() {
   while true {
   }
 
-  let a = sizeof 10
-  let msg = if num is 69 then "nice" else "not nice"
+  #let msg = if num is 69 then "nice" else "not nice"
+
+
   return 0
 }
 
