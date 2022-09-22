@@ -29,7 +29,7 @@ syn match operator "=>"
 syn keyword function_word extern def nextgroup=function_name skipwhite
 syn match function_name "\v[A-z_]+[A-z0-9_]*" contained nextgroup=function_args
 syn region function_args start="(" end=")" transparent contained contains=function_arg, defaultTypes, function_arg_keywords
-syn keyword function_arg_keywords multiple contained 
+syn match function_arg_keywords "\.\.\." contained 
 syn match function_arg "\v[A-z_]+[A-z0-9_]*" contained  
 
 syn match function_call "\v[A-z_]+[A-z0-9_]*\s*\(" transparent contains=function_call_name
