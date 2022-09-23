@@ -20,7 +20,7 @@ syn keyword control_conditional if else then match default
 syn keyword control_loop while for in
 
 syn keyword operator_words is isnt as and or not sizeof 
-syn keyword defaultTypes char bool i32 i64 u32 u64 f32 f64 string syn keyword ptr ptr ref
+syn keyword defaultTypes char bool i32 i64 u32 u64 f32 f64 string syn keyword ptr ref deref
 syn keyword import import from
 
 syn match operator "\v[\-\+\=\*\^\%\!\.]"
@@ -29,7 +29,7 @@ syn match operator "=>"
 syn keyword function_word extern def nextgroup=function_name skipwhite
 syn match function_name "\v[A-z_]+[A-z0-9_]*" contained nextgroup=function_args
 syn region function_args start="(" end=")" transparent contained contains=function_arg, defaultTypes, function_arg_keywords
-syn match function_arg_keywords "\.\.\." contained 
+syn keyword function_arg_keywords  varargs contained 
 syn match function_arg "\v[A-z_]+[A-z0-9_]*" contained  
 
 syn match function_call "\v[A-z_]+[A-z0-9_]*\s*\(" transparent contains=function_call_name
